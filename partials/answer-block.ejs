@@ -1,0 +1,16 @@
+<div class="element-container">
+  <%- include('../partials/score-block'); %>
+  <hr>
+  <div class="text-block">
+    <% if(data.Title) { %>
+    <h2 id="question-title"><%- data.Title %></h2>
+    <% } %>
+
+    <span><%- data.Body %></span>
+    <div class="date-container">
+      <p><% let date = new Date(data.CreationDate); %>
+      <%- date.toLocaleDateString(undefined, {dateStyle: 'medium'}) + ' at ' +
+          date.toLocaleTimeString(undefined, {timeStyle: 'short'}) %></p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,55 @@
+<!--
+ Web Technology WS21
+
+ Register page
+
+ Authors: Simone Franza  01530693
+          Edmond Hasanaj 11906810
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include('../partials/head'); %>
+    <link rel="stylesheet" href="./style/register.css">
+  </head>
+  <body>
+    <header>
+      <%- include('../partials/header'); %>
+    </header>
+    <div id="register-body">
+      <div id="register-svg" >
+        <div id="register-form">
+          <% if(!userdata || !userdata.loggedIn) { %>
+            <h2>Welcome to heapWISDOM, choose you username wisely!</h2>
+            <div id="login-prompt">
+              <p>Already a member?</p>
+              <p><span id="login-link" onclick="redirectSignIn()">Sign in</span></p>
+            </div>
+            <p>Username</p>
+            <input type="text" id="register-uname" class="text-input" name="uname-content" placeholder="Username"/>
+            <p>Password</p>
+            <input type="password" id="register-pwd" class="text-input" name="pword-content" placeholder="Password"/>
+            <button id="register-button" onclick="userRegister()">Register</button>
+          <% }else{ %>
+            <h2>Hi, <%- userdata.username %>!</h2>
+            <div id="register-prompt">
+              <p>You are already logged in. <br/><br/>
+              Do you want to <span class="clickable-link" onclick="userLogout()">log out?</span></p>
+            </div>
+          <% } %>
+        </div>
+        <svg class="register-inner-svg" preserveAspectRatio="none" width="100%" height="50%" viewBox="0 0 1440 320">
+            <path d="M0,288L24,282.7C48,277,96,267,144,224C192,181,240,107,288,85.3C336,64,384,96,432,96C480,96,528,64,576,58.7C624,53,672,75,720,74.7C768,75,816,53,864,58.7C912,64,960,96,1008,117.3C1056,139,1104,149,1152,144C1200,139,1248,117,1296,138.7C1344,160,1392,224,1416,256L1440,288L1440,320L1416,320C1392,320,1344,320,1296,320C1248,320,1200,320,1152,320C1104,320,1056,320,1008,320C960,320,912,320,864,320C816,320,768,320,720,320C672,320,624,320,576,320C528,320,480,320,432,320C384,320,336,320,288,320C240,320,192,320,144,320C96,320,48,320,24,320L0,320Z"/>
+        </svg>
+        <svg class="register-inner-svg" preserveAspectRatio="none" width="100%" height="50%" viewBox="0 0 1440 320">
+            <path d="M0,160L80,186.7C160,213,320,267,480,282.7C640,299,800,277,960,229.3C1120,181,1280,107,1360,69.3L1440,32L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"/>
+        </svg>
+      </div>
+    </div>
+    <footer>
+      <%- include('../partials/footer'); %>
+    </footer>
+    <%- include('../partials/scripts'); %>
+    <script type="text/javascript" src="scripts/register.js"> </script>
+  </body>
+</html>

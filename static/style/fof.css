@@ -1,0 +1,37 @@
+body {
+  margin: 0;
+  font: 1em sans-serif;
+  background-color: var(--lighter);
+}
+
+#fof-body {
+  width: 30vw;
+  height: 30vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  bottom: auto;
+  z-index: 0;
+  background-color: var(--darker);
+  border-radius: 100em;
+  text-align: center;
+  color: white;
+  padding:5em;
+}
+#error-number {
+  font-size: 12rem;
+  margin: 0;
+  padding: 0;
+}
+#error-message {
+  width: 70%;
+  font-size: 2em;
+  margin: 0;
+  padding: 0;
+}

@@ -1,0 +1,69 @@
+<!--
+ Web Technology WS21
+
+ Question page
+
+ Authors: Simone Franza  01530693
+          Edmond Hasanaj 11906810
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include('../partials/head'); %>
+    <link rel="stylesheet" href="./style/question.css">
+  </head>
+  <body>
+    <header>
+      <%- include('../partials/header'); %>
+    </header>
+    <div id="container">
+      <div id="main-content">
+
+        <%- include('../partials/answer-block', {data : question, key: IDs[0]}); %>
+
+        <% answers.forEach(function(answer, idx) { %>
+        <%- include('../partials/answer-block', {data : answer, key: IDs[idx+1]}); %>
+        <% }); %>
+
+        <div class="element-container">
+          <% if(userdata && userdata.loggedIn) { %>
+            <div id="add-answer-block" onclick="addAnswer(this)">
+              <p id="answer-btn">Add answer</p>
+            </div>
+            <hr>
+            <div id="response-field">
+            <textarea id="new-answer" type="text" placeholder="Add an answer.."></textarea>
+            </div>
+          <% }else{ %>
+          <div id="login-request">
+            <p>Please <span class="clickable-link" onclick="userLogin()">log in</span> to post an answer</p>
+          </div>
+          <% } %>
+
+        </div>
+
+      </div>
+      <div id="similar-questions">
+      <div id="extractor" onclick="toggleSimilarQuestions()">
+      <img src="./assets/left-arrow.svg" alt="Left arrow" />
+      </div>
+      <h2>Similar questions</h2>
+      <hr>
+      <div id='titles-block'> 
+        <% similar.forEach((sim, idx) => { %>
+        <p onclick="openQuestion(<%- similarKeys[idx]%>)"><%- sim.Title %></p>
+        <% if(idx != similar.length - 1) { %>
+        <hr>
+        <% } %>
+        <% }); %>
+        
+      </div>
+      </div>
+    </div>
+    <footer style="margin-top: 0" class="modded-footer">
+      <%- include('../partials/footer'); %>
+    </footer>
+    <%- include('../partials/scripts'); %>
+    <script type="text/javascript" src="scripts/question.js"> </script>
+  </body>
+</html>

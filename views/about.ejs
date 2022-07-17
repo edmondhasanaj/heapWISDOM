@@ -1,0 +1,88 @@
+<!--
+ Web Technology WS21
+
+ About page
+
+ Authors: Simone Franza  01530693
+          Edmond Hasanaj 11906810
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include('../partials/head'); %>
+    <link rel="stylesheet" href="./style/about.css">
+  </head>
+  <body>
+    <header>
+      <%- include('../partials/header'); %>
+    </header>
+    <div id="about-body">
+      <div class="student">
+        <div class="about-images">
+          <div class="social">
+            <a href="https://www.linkedin.com/in/simone-franza-534962194" target="_blank">
+              <img class="social-logo" 
+                 src="/assets/linkedin_logo.svg"
+                 onclick=''
+                alt="Linkedin logo"/>
+            </a>
+            <a href="https://github.com/simonefranza" target="_blank">
+              <img class="social-logo" src="/assets/github_logo.svg"
+                alt="Github logo"/>
+            </a>
+          </div>
+          <div>
+            <img class="student-pic" src="/assets/simone.jpeg"
+              alt="Picture of Simone Franza"/>
+          </div>
+        </div>
+        <div class="student-info-container">
+          <div class="empty-div"></div>
+          <div class="student-info">
+            <p>Simone FRANZA</p>
+            <p>01530693</p>
+            <p>
+              <a class="link-highlight" href="mailto: simone.franza@student.tugraz.at">
+                simone.franza@student.tugraz.at
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="student">
+        <div class="about-images">
+          <div>
+            <img class="student-pic" src="/assets/edmond.jpeg"
+              alt="Picture of Edmond Hasanaj"/>
+          </div>
+          <div class="social">
+            <a href="https://www.linkedin.com/in/edmond-hasanaj/" target="_blank">
+              <img class="social-logo" src="/assets/linkedin_logo.svg"
+                alt="Linkedin logo"/>
+            </a>
+            <a href="#" target="_blank">
+              <img class="social-logo" src="/assets/github_logo.svg"
+                alt="Github logo"/>
+            </a>
+          </div>
+        </div>
+        <div class="student-info-container">
+          <div class="student-info">
+            <p>Edmond HASANAJ</p>
+            <p>11906810</p>
+            <p>
+              <a class="link-highlight" href="mailto: edmond.hasanaj@student.tugraz.at">
+                edmond.hasanaj@student.tugraz.at
+              </a>
+            </p>
+          </div>
+          <div class="empty-div"></div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <%- include('../partials/footer'); %>
+    </footer>
+    <%- include('../partials/scripts'); %>
+  </body>
+</html>

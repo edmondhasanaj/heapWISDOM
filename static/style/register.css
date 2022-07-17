@@ -1,0 +1,134 @@
+body {
+  margin: 0;
+  font: 1em sans-serif;
+  background-color: var(--lighter);
+}
+
+#register-body {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10%;
+  position: absolute;
+  top: 8em;
+  bottom: 8em;
+  z-index: 0;
+}
+
+#register-form {
+  max-width: 40%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  transform: translate(-50%,-50%);
+  padding: 5em;
+  background-color: var(--darker);
+  border-radius: 100em;
+}
+
+#login-prompt {
+  margin-top: .1em;
+  margin-bottom: 1em;
+  position:relative;
+}
+#login-prompt p{
+  display: inline;
+}
+
+#login-link, .clickable-link{
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#login-link:visited, .clickable-link:visited{
+  color: white;
+}
+#login-link::after, .clickable-link::after{
+  content: '';
+  position: absolute;
+  width: 0;
+  border-radius: 1em;
+  bottom: -.3em;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transition: width .3s ease-in-out;
+  -moz-transition: width .3s ease-in-out;
+  -o-transition: width .3s ease-in-out;
+  transition: width .3s ease-in-out;
+  border: 0em solid white;
+}
+
+#login-link:hover::after, .clickable-link:hover::after{
+  width: 100%;
+  border: .05em solid white;
+  background-color: white;
+}
+
+#register-form h2 {
+  color: white;
+  text-align: center;
+  width: 100%;
+  margin-bottom: .1em;
+  font-size: 2em;
+}
+
+#register-form p {
+  color: white;
+  text-align: left;
+  width: 100%;
+}
+
+.text-input{
+  width: calc(100% - 1em);
+  border: 2px solid var(--lighter);
+  border-radius: 5em;
+  padding:.5em;
+  font-size: 1em;
+  color: var(--darkest);
+}
+
+#register-svg{
+  height: 100%;
+  width: 100%;
+  fill: var(--darkest);
+}
+
+.register-inner-svg{
+  vertical-align: bottom;
+}
+
+.register-inner-svg path{
+  -webkit-transition: .5s ease-in-out;
+  -moz-transition: .5s ease-in-out;
+  -o-transition: .5s ease-in-out;
+  transition: .5s ease-in-out;
+}
+
+#register-button {
+  background-color: var(--darkest);
+  width: 50%;
+  height: 3em;
+  color: white;
+  border: .05em solid var(--lighter);
+  border-radius: 10em;
+  margin: 3em;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.wrong-input{
+  background-color: var(--error);
+}
+.wrong-input::placeholder {
+  color: white;
+}

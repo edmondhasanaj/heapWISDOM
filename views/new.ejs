@@ -1,0 +1,39 @@
+<!--
+ Web Technology WS21
+
+ New question page
+
+ Authors: Simone Franza  01530693
+          Edmond Hasanaj 11906810
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include('../partials/head'); %>
+    <link rel="stylesheet" href="./style/new.css">
+  </head>
+  <body>
+    <header>
+      <%- include('../partials/header'); %>
+    </header>
+    <div id="container">
+    <div class="element-container">
+        <div id="add-question-block" onclick="addQuestion(this)">
+          <p id="question-btn">Add new question</p>
+        </div>
+        <hr>
+        <div id="question-field">
+          <input id="question-title" type="text" placeholder="Choose a wise title">
+        <hr>
+          <textarea id="question-body" placeholder="Give more details about your question.."></textarea>
+        </div>
+
+    </div>
+    </div>
+    <footer>
+      <%- include('../partials/footer'); %>
+    </footer>
+    <%- include('../partials/scripts'); %>
+    <script type="text/javascript" src="scripts/new.js"> </script>
+  </body>
+</html>

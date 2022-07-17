@@ -1,0 +1,67 @@
+<!--
+ Web Technology WS21
+
+ Index page
+
+ Authors: Simone Franza  01530693
+          Edmond Hasanaj 11906810
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+    <%- include('../partials/head'); %>
+    <link rel="stylesheet" href="./style/index.css">
+  </head>
+  <body>
+    <header>
+      <%- include('../partials/header'); %>
+    </header>
+    <div id="index-body">
+      <% if(query && data.length) { %>
+      <div class="search-res">
+        <h2>Search results for:</h2>
+        <p><%- query %></p>
+      </div>
+      <% } else if(data.length) { %>
+      <h2>Most popular questions</h2>
+      <% } else { %>
+      <h2>Wow, we got no results for this query<br/>Try using other words</h2>
+      <% } %>
+      <% data.forEach((el, idx) => { %>
+      <div class="question-row">
+        <% if(idx) { %>
+        <svg class="index-svg" preserveAspectRatio="none" width="100%" height="100%" viewBox="0 0 1440 184">
+          <% if((idx%2) == 1) { %>
+          <path d="<%- topWaves[Math.floor(Math.random()*topWaves.length)] %>"/>
+          <% } else if(idx) { %>
+          <path d="<%- bottomWaves[Math.floor(Math.random()*bottomWaves.length)] %>"/>
+          <% } %>
+        </svg>
+        <% } %>
+        <div class="<% if((idx % 2) == 1) { %>colored-container<% } else { %>light-container<% } %>">
+          <div class="text-container">
+            <h2 class="question" onclick="toggleQuestion(this)">
+              <%- el.Title %>
+            </h2>
+            <img class="open-question" onclick="openQuestion(<%- keys[idx] %>)"
+              src="/assets/<% if((idx % 2) == 1) { %>open-link_white.svg<% } else { %>open-link.svg<% } %>"
+              alt="Arrow to open question"/>
+            <div class="question-body <% if((idx % 2) == 1) { %>light-text<% } else { %>dark-text<% } %>">
+              <%- el.Body %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% }); %>
+      <% if(data.length) { %>
+      <div class="closing-element <% if((data.length % 2) === 0){ %>last-dark<% } else { %>last-light<% } %>">
+      </div>
+      <% } %>
+    </div>
+    <footer <% if(data.length) { %>class="modded-footer"<% } %>>
+      <%- include('../partials/footer'); %>
+    </footer>
+    <%- include('../partials/scripts'); %>
+    <script type="text/javascript" src="scripts/index.js"> </script>
+  </body>
+</html>

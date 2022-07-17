@@ -1,0 +1,5 @@
+@media print {
+    header, footer, .open-question, svg {
+        display: none;
+    }
+}

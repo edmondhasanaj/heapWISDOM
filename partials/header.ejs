@@ -1,0 +1,36 @@
+<div class="fluid-container">
+  <div id="header-left">
+    <img onclick="location.href='/index.html';" id="header-logo"
+      src="/assets/logo_white.svg"
+      alt="Owl over the heap"/>
+    <div id="header-text">
+      <img onclick="location.href='/index.html';" id="header-logo-text"
+        src="/assets/text_logo_white.svg"
+        alt="HeapWisdom"/>
+      <p id="wisdom">
+        <%= wisdom %>
+      </p>
+    </div>
+  </div>
+  <div id="header-center">
+    <p class='header-p clickable' onclick="location.href='/new.html';">Ask Question</p>
+    <% if(!userdata || !userdata.loggedIn){ %>
+      <p class='header-p clickable' onclick="location.href='/login.html';">Login</p>
+    <% } else { %>
+      <span class="logout-container">
+      <p class='header-p'>Hi, <%- userdata.username %>
+        <span class="logout-button clickable" onclick="userLogout()">Logout</span></p>
+      </span>
+    <% } %>
+    <div class="search-bar">
+      <input type="text" id="search-content" name="search-content" placeholder="Search"/>
+      <div class="search-icon" onclick="performSearch()"></div>
+    </div>
+  </div>
+  <div id="header-right"></div>
+  </div>
+<div id="header-svg" >
+  <svg id="inner-svg" preserveAspectRatio="none" width="100%" height="100%" viewBox="0 0 100 10">
+      <path d="M0,0 L0,7.651 C0,7.651 4.789,9.697 11.904,9.697C30.099,9.697 36.209,1.094 64.287,1.094C87.287,1.094 100,6.523 100,6.523L100,0L0,0"/>
+  </svg>
+</div>

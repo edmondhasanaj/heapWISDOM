@@ -1,0 +1,13 @@
+<div class="score-block">
+  <div class="upvote 
+    <% if(data.rated == 1){ %>
+      active-button
+    <% } %>
+    " onclick="upvote(<%- key %>, this)"></div>
+  <p class="score"><%- data.Score %></p>
+  <div class="downvote
+    <% if(data.rated == -1){ %>
+      active-button
+    <% } %>
+  " onclick="downvote(<%- key %>, this)"></div>
+</div>

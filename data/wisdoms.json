@@ -1,0 +1,31 @@
+{
+  "wisdoms" : [
+    {
+      "phrase" : "Compile it until you make it"
+    },
+    {
+      "phrase" : "A bug a day keeps the compiler away"
+    },
+    {
+      "phrase" : "If you can't fix 'em, embrace them"
+    },
+    {
+      "phrase" : "It's not a bug, until it crashes"
+    },
+    {
+      "phrase" : "A semicolon is never missing twice in the same line"
+    },
+    {
+      "phrase" : "Bug me once, shame on you; bug me twice, shame on me"
+    },
+    {
+      "phrase" : "Compilers don't grow on trees"
+    },
+    {
+      "phrase" : "Google wasn't built in a day"
+    },
+    {
+      "phrase" : "To vim or not to vim"
+    }
+  ]
+}

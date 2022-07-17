@@ -1,0 +1,129 @@
+body {
+  margin: 0;
+  font: 1em sans-serif;
+  background-color: var(--lighter);
+}
+
+#index-body {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#index-body>h2, .search-res>h2 {
+  text-align:center;
+}
+
+.search-res>h2 {
+  margin-bottom: .5em;
+}
+
+.search-res p {
+  margin:0;
+  text-align:center;
+}
+
+.question-row {
+  width: 100%;
+  position: relative;
+  min-height: 10em;
+}
+
+.text-container {
+  width: 100%;
+  max-width: 1200px;
+  position:relative;
+}
+
+.colored-container, .light-container {
+  width: 100%;
+  padding-inline: 9%;
+  padding-block: 2%;
+  box-sizing: border-box;
+  position: relative;
+  display:flex;
+  flex-direction:column;
+  align-items: center;
+  display:flex;
+  flex-direction:column;
+  align-items: center;
+}
+
+.colored-container {
+  background-color: hsl(212, 100%, 25%);
+  border: 2px solid hsl(212, 100%, 25%);
+  color:white;
+}
+
+.light-container {
+}
+
+.question{
+  display: block;
+  position:relative;
+  width: 100%;
+  padding-inline: 10%;
+  box-sizing: border-box;
+  text-align: center;
+  cursor: pointer;
+}
+
+.index-svg {
+  position: relative;
+  height: 4em; fill: hsl(212, 100%, 25%);
+  vertical-align:bottom;
+}
+
+.question-body {
+  position:relative;
+  overflow-y: hidden;
+  max-height: 0px;
+  -webkit-transition: max-height .4s ease-in-out;
+  -moz-transition:    max-height .4s ease-in-out;
+  -o-transition:      max-height .4s ease-in-out;
+  transition:         max-height .4s ease-in-out;
+}
+
+.question-body a{
+  text-decoration: underline;
+  font-weight: bold;
+  color: inherit;
+}
+.question-body a::visited{
+  color: initial;
+}
+
+.question-buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.question-row:first-child .question-buttons{
+  top: 50%;
+}
+
+.closing-element {
+  height: 5em;
+  width: 100%;
+}
+.last-dark {
+  background-color: hsl(212, 100%, 25%);
+}
+
+.last-light{
+  background-color: transparent;
+}
+
+.open-question {
+  cursor: pointer;
+  padding: 1em;
+  float: right;
+  position: absolute;
+  right: 2em;
+  top: .5em; 
+  height: 2em;
+}
